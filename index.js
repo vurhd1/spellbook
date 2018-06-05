@@ -10,10 +10,14 @@ function changeHeader(){
 
 function formSubmit(){
     const input = document.getElementsByName('change')[0].value;
-    console.log(input)
     header1.textContent = input
     return false;
 }
 
 button1.addEventListener('click', changeHeader);
 
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+        formSubmit();
+    }
+})
