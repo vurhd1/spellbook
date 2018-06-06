@@ -7,7 +7,7 @@ body {
   background-repeat: no-repeat;
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 img#skull {
@@ -26,7 +26,7 @@ img#quill {
 }
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: UnifrakturCook, serif;
   margin-left: 10vw;
   margin-top: 5vw;
   margin-bottom: 3vw;
@@ -57,7 +57,7 @@ input[type="text"] {
   border: 1px solid #cacaca;
   background-color: #fefefe;
   box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
-  font-family: 'Open Sans', sans-serif;
+  font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -93,7 +93,7 @@ button[type="submit"] {
   white-space: nowrap;
   display: inline-block;
   vertical-align: middle;
-  font-family: 'Open Sans', sans-serif;
+  font-family: inherit;
   padding: 0 1em;
   border: 1px solid transparent;
   transition: background-color .25s ease-out,color .25s ease-out;
@@ -116,7 +116,7 @@ main {
   margin-left: 10vw;
   height: calc(100vh - 18.5vw - 4rem);
   overflow-y: scroll;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Homemade Apple", cursive;
   font-size: 2rem;
   color: rgba(100, 50, 0, 0.8);
   padding: 1.5rem 4rem;
