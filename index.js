@@ -7,14 +7,19 @@ const formSubmit = function(ev){
     const f = ev.target
     const spell = f.spellName.value
     const mana = f.manaCost.value
-    //document.querySelector('#spells').innerHTML += `<li>${spell} \u00A0\u00A0\u00A0 || \u00A0\u00A0\u00A0 ${mana}mana</li>`;
-    otherAdd(spell, mana)
+    document.querySelector('#spells').innerHTML +=
+    `<li>
+        <span style="color:red">${spell}</span>
+        \u00A0\u00A0\u00A0 || \u00A0\u00A0\u00A0
+        <span style="color:blue">${mana} mana</span>
+    </li>`
+    //otherAdd(spell, mana)
 }
 
 function otherAdd(spell, mana){
     const list = document.querySelector('ul')
     const item = document.createElement('li')
-    item.appendChild(document.createTextNode(spell + " \u00A0\u00A0\u00A0 || \u00A0\u00A0\u00A0 " + mana))
+    item.appendChild(document.createTextNode(`${spell} \u00A0\u00A0\u00A0 || \u00A0\u00A0\u00A0 ${mana} mana`))
     list.appendChild(item)
 }
 
