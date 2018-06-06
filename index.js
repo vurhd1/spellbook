@@ -1,21 +1,16 @@
-const button1 = document.querySelector('button')
-const header1 = document.querySelector('#header1')
-const header2 = document.querySelector('#header2')
-
-//Changes the second header
-function changeHeader(){
-    header2.textContent = 'Changed it'
-}
+const form = document.querySelector('form')
 
 //Changes the first header based on the form input
-function formSubmit(){
-    const input = document.getElementsByName('change')[0].value;
-    header1.textContent = input
-    return false;
+const formSubmit = function(ev){
+    ev.preventDefault()
+
+    const f = ev.target
+    const spell = f.spellName.value
+    document.querySelector('h1').textContent = spell;
 }
 
-//Event handler for clicking the Change Text button
-button1.addEventListener('click', changeHeader);
+//Event handler to submit the form
+form.addEventListener('submit', formSubmit)
 
 //Event handler for pressing enter
 document.addEventListener('keydown', function(event) {
