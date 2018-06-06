@@ -6,7 +6,8 @@ const formSubmit = function(ev){
 
     const f = ev.target
     const spell = f.spellName.value
-    document.querySelector('h1').textContent = spell;
+    document.querySelector('#spells').innerHTML += `<li>${spell}</li>`;
+
 }
 
 //Event handler to submit the form
