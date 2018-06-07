@@ -1,5 +1,5 @@
 const form = document.querySelector('form')
-
+let spellList = []
 
 const buildSpan = function(name, value, color) {
     const el = document.createElement('span')
@@ -28,6 +28,8 @@ const formSubmit = function(ev){
     item.appendChild(document.createTextNode(`\u00A0\u00A0\u00A0 || \u00A0\u00A0\u00A0`))
     item.appendChild(manaSpan)
     item.classList.add('item')
+    
+    spellList.push(item);
     list.appendChild(item)
 
 }
