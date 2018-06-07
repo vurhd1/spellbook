@@ -1,6 +1,19 @@
 const form = document.querySelector('form')
 let spellList = []
 
+const save = function(){
+    localStorage.setItem(
+        'spellList',
+        JSON.stringify(spellList)
+    )
+}
+
+const load = function(){
+    const spellJSON = localStorage.getItem('spellList')
+    const spellArray = JSON.parse(spellJSON)
+    spellArray.forEach(this.addSpell.bind(this))
+}
+
 const buildSpan = function(name, value, color) {
     const el = document.createElement('span')
     el.textContent = value
@@ -15,6 +28,7 @@ const removeSpell = function(ev){
     const i = spellList.indexOf(item)
     spellList.splice(i, 1)
     item.parentNode.removeChild(item)
+    save()
 }
 
 const favorite = function(ev){
@@ -23,6 +37,7 @@ const favorite = function(ev){
     item.classList.add('favorite')
     item.querySelector('.spell').style.fontWeight = '900'
     item.querySelector('.mana').style.fontWeight = '900'
+    save()
 }
 
 //Changes the first header based on the form input
@@ -59,8 +74,8 @@ const formSubmit = function(ev){
     spellList.push(item);
     list.appendChild(item)
 
-    f.reset();
-
+    f.reset()
+    save()
 }
 
 
