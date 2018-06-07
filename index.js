@@ -17,6 +17,14 @@ const removeSpell = function(ev){
     item.parentNode.removeChild(item)
 }
 
+const favorite = function(ev){
+    const button = ev.target
+    const item = button.closest('.item')
+    item.classList.add('favorite')
+    item.querySelector('.spell').style.fontWeight = '900'
+    item.querySelector('.mana').style.fontWeight = '900'
+}
+
 //Changes the first header based on the form input
 const formSubmit = function(ev){
     ev.preventDefault();
@@ -34,14 +42,20 @@ const formSubmit = function(ev){
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete')
-    deleteButton.textContent = 'delete/'
+    deleteButton.textContent = 'delete'
     deleteButton.addEventListener('click', removeSpell)
+
+    const favoriteButton = document.createElement('button');
+    favoriteButton.classList.add('favorite')
+    favoriteButton.textContent = 'favorite'
+    favoriteButton.addEventListener('click', favorite)
 
     item.appendChild(spellSpan)
     item.appendChild(manaSpan)
     item.classList.add('item')
     item.appendChild(deleteButton)
-    
+    item.appendChild(favoriteButton)
+
     spellList.push(item);
     list.appendChild(item)
 
