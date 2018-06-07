@@ -9,6 +9,13 @@ const buildSpan = function(name, value, color) {
     return el
 }
 
+const removeSpell = function(ev){
+    const button = ev.target
+    const item = button.closest('.item')
+    const i = spellList.indexOf(item)
+    spellList.splice(i, 1)
+    item.parentNode.removeChild(item)
+}
 
 //Changes the first header based on the form input
 const formSubmit = function(ev){
@@ -23,14 +30,22 @@ const formSubmit = function(ev){
 
     const spellSpan = buildSpan('spell', spell, 'red')
     const manaSpan = buildSpan('mana', mana, 'blue')
+    manaSpan.appendChild(document.createTextNode(` mana`))
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete')
+    deleteButton.textContent = 'delete/'
+    deleteButton.addEventListener('click', removeSpell)
 
     item.appendChild(spellSpan)
-    item.appendChild(document.createTextNode(`\u00A0\u00A0\u00A0 || \u00A0\u00A0\u00A0`))
     item.appendChild(manaSpan)
     item.classList.add('item')
+    item.appendChild(deleteButton)
     
     spellList.push(item);
     list.appendChild(item)
+
+    f.reset();
 
 }
 
